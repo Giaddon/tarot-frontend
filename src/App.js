@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import Tarot from './tarot';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [ card, setCard ] = useState({});
+  const [ isLoading, setIsLoading ] = useState(true);
+
+  useEffect(() => {
+    async function drawNewCard(){
+      setCard(await Tarot.drawOne());
+    }
+    drawNewCard();
+    setIsLoading(false);
+  }, []);
+
+  return isLoading 
+    ? (<div className="App">
+        <h2>Loading...</h2>
+      </div>)
+    : (<div className="App">
+        <h2>{card.name}</h2>
+        <img src={card.image} alt="Tarot" />
+      </div>)
 }
 
 export default App;
