@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: local('Cinzel Decorative'), url(./CinzelDecorative-Regular.ttf) format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -27,7 +27,7 @@ class Tarot {
       console.log("Cards drawn! ", cards);
       for (let card of cards) {
         card.name = this.beautifyName(card.name);
-        card.reverse = Math.random() > .5 ? true : false;
+        card.reverse = Math.random() > .666 ? true : false;
       }
 
       return cards; 
