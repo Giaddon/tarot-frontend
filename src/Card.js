@@ -16,9 +16,9 @@ function Card({card}) {
         onClick={toggleDesc} 
         src={card.image} 
         className={card.reverse ? "reversed" : ""} 
-        alt="Tarot" 
+        alt={`Tarot Card: ${card.name} ${card.reverse ? "reversed" : null}`} 
       />
-      <div id={`${card.id}-desc`} className={card.reverse ? "r" : ""}>
+      <div id={`${card.id}-desc`} className={card.reverse ? "r" : null}>
         <p>{card.summary}</p>
         <br />
         {card.reverse 
