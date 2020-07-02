@@ -4,6 +4,23 @@ const API = "https://tarot.howlcode.com/api/v1";
 
 class Tarot {
 
+  static async newDeck() {
+    try {
+      console.log("Generating deck...")
+      const response = await Axios.get(`${API}/spreads/shuffled`);
+      let deck = response.data
+      console.log("Deck complete.");
+      for (let card of deck) {
+        card.name = this.beautifyName(card.name);
+        card.reverse = Math.random() > .666 ? true : false;
+      }
+      return deck; 
+
+    } catch(error) {
+      console.error(error);
+    };
+  }
+
   static async drawOne() {
     try {
       console.log("Drawing card...")
