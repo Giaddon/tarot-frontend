@@ -1,0 +1,29 @@
+.deck-controls {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1;
+}
+
+.deck-controls button {
+  padding: 5px;
+  background-color: skyblue;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  transition: background-color .3s;
+  cursor: pointer;  
+}
+
+.deck-controls button:hover {
+  background-color: rgb(70, 159, 233);
+}
+
+
+.deck-controls button ~ button {
+  margin-left: 5px;
+  
+}

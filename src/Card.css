@@ -7,6 +7,11 @@
   max-width: 180px;
   background-color: #fff;
   flex: 1 0 auto;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 0 1px 4px rgb(255, 238, 0);
 }
 
 .card img {
