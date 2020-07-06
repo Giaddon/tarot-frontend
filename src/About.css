@@ -6,4 +6,10 @@
   border-radius: 4px;
   padding: 10px;
   z-index: 1;
+  cursor: pointer;
+}
+
+.about-text {
+  display: none;
+  margin-top: 10px;
 }

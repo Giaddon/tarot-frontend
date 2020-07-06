@@ -6,14 +6,17 @@ import Deck from "./Deck";
 import Tarot from './tarot';
 
 function CardTable() {
+  const [ isLoading, setIsLoading ] = useState(false);
   const [ deck, setDeck ] = useState(null);
   const [ hand, setHand ] = useState([]);
 
   async function makeNewDeck(){
+    setIsLoading(true);
     const cardArr = await Tarot.newDeck();
     let newDeck = new Deck(cardArr);
     setHand([]);
     setDeck(newDeck);
+    setIsLoading(false);
   }
 
   function drawSingle(){
@@ -31,19 +34,21 @@ function CardTable() {
     setHand([...newCards, ...hand]);
   }
 
-  return (
-    <div className="card-table">
-      <DeckControls 
-        deckReady={deck ? true : false} 
-        newDeck={makeNewDeck} 
-        drawOne={drawSingle} 
-        drawThree={drawThree} 
-        drawTen={drawTen} 
-        numCards={deck ? deck.cards.length : null} 
-      />
+  return isLoading 
+    ? (<div className="card-table">
+        <h2>Loading...</h2>
+      </div>)
+    : (<div className="card-table">
+        <DeckControls 
+          deckReady={deck ? true : false} 
+          newDeck={makeNewDeck} 
+          drawOne={drawSingle} 
+          drawThree={drawThree} 
+          drawTen={drawTen} 
+          numCards={deck ? deck.cards.length : null} 
+        />
       {hand.map( (card) => <Card card={card} key={card.id} />)}
-    </div>
-  );
+      </div>)
 }
 
 export default CardTable;
