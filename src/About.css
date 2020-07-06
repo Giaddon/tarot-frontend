@@ -1,0 +1,9 @@
+.about {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1;
+}

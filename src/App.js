@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import CardTable from './CardTable';
-
+import About from "./About";
 
 function App() {
   const [ isLoading, setIsLoading ] = useState(false);
@@ -30,6 +30,7 @@ function App() {
         <h2>Loading...</h2>
       </div>)
     : (<div className="App">
+        <About />
         <CardTable />
       </div>)
 }

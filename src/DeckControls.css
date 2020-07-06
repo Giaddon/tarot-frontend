@@ -7,6 +7,10 @@
   padding: 10px;
   z-index: 1;
 }
+.deck-controls div {
+  display: inline;
+  margin-left: 10px;
+}
 
 .deck-controls button {
   padding: 5px;

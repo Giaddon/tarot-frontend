@@ -4,8 +4,19 @@ class Deck {
   }
 
   drawOne(){
-    console.log('Drawing card... ', this.cards[this.cards.length-1]);
-   return this.cards.pop();
+    return this.cards.pop();
+  }
+
+  drawThree(){
+    return this.cards.splice(this.cards.length-3);
+  }
+
+  drawFive(){
+    return this.cards.splice(this.cards.length-5);
+  }
+
+  drawTen(){
+    return this.cards.splice(this.cards.length-10);
   }
 }
 

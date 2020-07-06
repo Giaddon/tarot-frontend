@@ -18,14 +18,29 @@ function CardTable() {
 
   function drawSingle(){
     let newCard = deck.drawOne();
-    console.log("New Card: ", newCard);
-    setHand([...hand, newCard]);
-    console.log("Hand: ", hand);
+    setHand([newCard, ...hand]);
   }
   
+  function drawThree(){
+    let newCards = deck.drawThree();
+    setHand([...newCards, ...hand]);
+  }
+
+  function drawTen(){
+    let newCards = deck.drawTen();
+    setHand([...newCards, ...hand]);
+  }
+
   return (
     <div className="card-table">
-      <DeckControls deckReady={deck ? true : false} newDeck={makeNewDeck} drawOne={drawSingle} />
+      <DeckControls 
+        deckReady={deck ? true : false} 
+        newDeck={makeNewDeck} 
+        drawOne={drawSingle} 
+        drawThree={drawThree} 
+        drawTen={drawTen} 
+        numCards={deck ? deck.cards.length : null} 
+      />
       {hand.map( (card) => <Card card={card} key={card.id} />)}
     </div>
   );
