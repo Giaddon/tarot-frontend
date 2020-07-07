@@ -19,6 +19,15 @@ function CardTable() {
     setIsLoading(false);
   }
 
+  async function makeNewMajorDeck(){
+    setIsLoading(true);
+    const cardArr = await Tarot.newMajorDeck();
+    let newDeck = new Deck(cardArr);
+    setHand([]);
+    setDeck(newDeck);
+    setIsLoading(false);
+  }
+
   function drawSingle(){
     let newCard = deck.drawOne();
     setHand([newCard, ...hand]);
@@ -41,7 +50,8 @@ function CardTable() {
     : (<div className="card-table">
         <DeckControls 
           deckReady={deck ? true : false} 
-          newDeck={makeNewDeck} 
+          newDeck={makeNewDeck}
+          newMajor={makeNewMajorDeck} 
           drawOne={drawSingle} 
           drawThree={drawThree} 
           drawTen={drawTen} 

@@ -21,39 +21,35 @@ class Tarot {
     };
   }
 
-  static async drawOne() {
+  static async newMajorDeck() {
     try {
-      console.log("Drawing card...")
-      const response = await Axios.get(`${API}/spreads/random_card`);
-      let card = response.data[0];
-      console.log("Card drawn! ", card);
-      card.name = this.beautifyName(card.name);
-      card.reverse = Math.random() > .5 ? true : false;
-      return card; 
+      console.log("Generating deck...")
+      const response = await Axios.get(`${API}/cards`);
+      let deck = response.data
+      console.log("Deck complete.");
+      deck.splice(22)
+      
+      for (let i = 0; i < deck.length; i++) {
+        let rand = Math.floor(Math.random() * 22);
+        [deck[i], deck[rand]] = [deck[rand], deck[i]];
+      }
 
-    } catch(error) {
-      console.error(error);
-    };
-  }
-
-  static async drawThree() {
-    try {
-      console.log("Drawing card...")
-      const response = await Axios.get(`${API}/spreads/three_cards`);
-      let cards = response.data;
-      console.log("Cards drawn! ", cards);
-      for (let card of cards) {
+      // for (let i = 0; i < 50; i++) {
+      //   let left = Math.floor(Math.random() * 22);
+      //   let right = Math.floor(Math.random() * 22);
+      //   [deck[left], deck[right]] = [deck[right], deck[left]];
+      // }
+      
+      for (let card of deck) {
         card.name = this.beautifyName(card.name);
         card.reverse = Math.random() > .666 ? true : false;
       }
-
-      return cards; 
+      return deck; 
 
     } catch(error) {
       console.error(error);
     };
   }
-
 
   static beautifyName(str) {
     return str.split('-').join(' ');

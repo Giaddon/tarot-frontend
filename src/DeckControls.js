@@ -1,20 +1,26 @@
 import React from "react";
 import "./DeckControls.css";
 import DrawButton from "./DrawButton";
-import NewDeckButton from "./NewDeckButton";
 import DeckStats from "./DeckStats";
 
 
-function DeckControls({deckReady, drawOne, drawThree, drawTen, newDeck, numCards}) {
+function DeckControls({deckReady, drawOne, drawThree, drawTen, newDeck, newMajor, numCards}) {
 
   return (
     <div className="deck-controls">
-      <NewDeckButton newDeck={newDeck} />
+      <DrawButton text="Create new deck" drawFunction={newDeck} />
+      <DrawButton text="Major Arcana only" drawFunction={newMajor} />
       {deckReady
         ? <div>
-            <DrawButton text="Draw a card" drawFunction={drawOne} />
-            <DrawButton text="Draw three cards" drawFunction={drawThree} />
-            <DrawButton text="Draw ten cards" drawFunction={drawTen} />
+            {numCards >= 1 
+              ? <DrawButton text="Draw a card" drawFunction={drawOne} />
+              : null}
+            {numCards >= 3
+              ? <DrawButton text="Draw three cards" drawFunction={drawThree} />
+              : null}
+            {numCards >= 10
+              ? <DrawButton text="Draw ten cards" drawFunction={drawTen} />
+              : null} 
             <DeckStats numCards={numCards}  />
           </div>
         : null}
