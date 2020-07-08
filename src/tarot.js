@@ -12,7 +12,7 @@ class Tarot {
       console.log("Deck complete.");
       for (let card of deck) {
         card.name = this.beautifyName(card.name);
-        card.reverse = Math.random() > .666 ? true : false;
+        card.reverse = Math.random() > .8 ? true : false;
       }
       return deck; 
 
@@ -33,16 +33,10 @@ class Tarot {
         let rand = Math.floor(Math.random() * 22);
         [deck[i], deck[rand]] = [deck[rand], deck[i]];
       }
-
-      // for (let i = 0; i < 50; i++) {
-      //   let left = Math.floor(Math.random() * 22);
-      //   let right = Math.floor(Math.random() * 22);
-      //   [deck[left], deck[right]] = [deck[right], deck[left]];
-      // }
-      
+ 
       for (let card of deck) {
         card.name = this.beautifyName(card.name);
-        card.reverse = Math.random() > .666 ? true : false;
+        card.reverse = Math.random() > .8 ? true : false;
       }
       return deck; 
 
