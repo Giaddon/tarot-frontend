@@ -11,5 +11,5 @@
 
 body{
   background: url('subtle_white_feathers.png');
-  width:100vw;
+  overflow-x: hidden;
 }

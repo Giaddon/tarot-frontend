@@ -6,6 +6,8 @@
   border-radius: 4px;
   padding: 10px;
   z-index: 1;
+  width: 323px;
+  text-align: center;
 }
 @media (min-width: 400px) {
   .deck-controls {
@@ -20,7 +22,7 @@
 }
 .deck-controls h2 {
   font-family: "Cinzel Decorative", sans-serif;
-  text-align: center;
+  
 }
 
 .deck-controls button {

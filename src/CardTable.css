@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   padding-top: 160px;
   max-width: 980px;
+  overflow-x: hidden;
   
 }
 @media (min-width: 400px) {
