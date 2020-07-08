@@ -7,8 +7,20 @@
   padding: 10px;
   z-index: 1;
 }
+@media (min-width: 400px) {
+  .deck-controls {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
 .deck-controls div {
   margin-top: 10px;
+}
+.deck-controls h2 {
+  font-family: "Cinzel Decorative", sans-serif;
+  text-align: center;
 }
 
 .deck-controls button {

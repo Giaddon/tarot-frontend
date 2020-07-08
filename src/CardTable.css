@@ -2,7 +2,14 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: 120px;
+  padding-top: 150px;
+  max-width: 980px;
+  
+}
+@media (min-width: 400px) {
+  .card-table {
+    margin: auto;
+  }
 }
 
 .loading {

@@ -8,6 +8,7 @@ function DeckControls({deckReady, drawOne, drawThree, drawTen, newDeck, newMajor
 
   return (
     <div className="deck-controls">
+      <h2>The Tarot</h2>
       <DrawButton text="Create new deck" drawFunction={newDeck} />
       <DrawButton text="Major arcana only" drawFunction={newMajor} />
       {deckReady

@@ -6,12 +6,10 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body{
   background: url('subtle_white_feathers.png');
-}
-
-.App {
-  
+  width:100vw;
 }
