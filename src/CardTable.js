@@ -45,7 +45,7 @@ function CardTable() {
 
   return isLoading 
     ? (<div className="card-table">
-        <h2>Loading...</h2>
+        <h1 className="loading">Loading...</h1>
       </div>)
     : (<div className="card-table">
         <DeckControls 

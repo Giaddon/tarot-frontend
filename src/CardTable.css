@@ -4,3 +4,8 @@
   flex-wrap: wrap;
   padding-top: 120px;
 }
+
+.loading {
+  font-family: "Cinzel Decorative", sans-serif;
+  margin: auto;
+}
