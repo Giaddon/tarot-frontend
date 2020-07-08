@@ -4,11 +4,18 @@
   margin: 8px;
   padding: 4px;
   border-radius: 4px;
-  max-width: 180px;
+  max-width: 43%;
   background-color: #fff;
   flex: 1 0 auto;
   cursor: pointer;
 }
+
+@media (min-width: 400px) {
+  .card {
+    max-width: 180px;
+  }
+}
+
 
 .card:hover {
   box-shadow: 0 0 1px 4px rgb(255, 238, 0);

@@ -10,8 +10,9 @@ function About() {
 
   return (
     <div className="about" onClick={revealAbout}>
-      <h4>About</h4>
+      <h4>?</h4>
       <p className="about-text">This app is a front-end for howlCode's <a href="https://github.com/howlCode/tarot_api" target="_blank">Tarot API</a>. 
+      <br /><br />
       It is made by <a href="http://grahamtrail.com" target="_blank">Graham Trail</a>.
       </p>
     </div>

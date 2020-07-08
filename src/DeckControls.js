@@ -9,7 +9,7 @@ function DeckControls({deckReady, drawOne, drawThree, drawTen, newDeck, newMajor
   return (
     <div className="deck-controls">
       <DrawButton text="Create new deck" drawFunction={newDeck} />
-      <DrawButton text="Major Arcana only" drawFunction={newMajor} />
+      <DrawButton text="Major arcana only" drawFunction={newMajor} />
       {deckReady
         ? <div>
             {numCards >= 1 

@@ -5,7 +5,7 @@ function DeckStats({numCards}) {
 
   return (
     <div className="deck-stats">
-      <p>Cards: {numCards}</p>
+      <p>Remaining cards: {numCards}</p>
     </div>
   )
 }
