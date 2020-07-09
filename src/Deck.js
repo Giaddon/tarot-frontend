@@ -1,3 +1,5 @@
+/** Class for managing our deck of cards. */
+
 class Deck {
   constructor(cards=[]) {
     this.cards = cards;

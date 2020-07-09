@@ -2,6 +2,11 @@ import React from 'react';
 import './Card.css';
 import $ from "jquery";
 
+/** Displays a single tarot card. 
+ *    Props:
+ *      card: Object. Contains all the data about the card.
+*/
+
 function Card({card}) {
 
   function toggleDesc() {
